@@ -68,7 +68,7 @@ body{
 
   position: relative;
   overflow: hidden;
-  padding: 24px;
+  padding: 12px;
   border-radius: 20px;
   background: var(--panel-dark);
 
@@ -1098,7 +1098,8 @@ body:not(:has(.panel:target)) .sidebar a[href="#about"]{
 /* ===== ABOUT MEDIA (Joy Theater Section) ===== */
 
 .about-media{
-  margin: -300px 0 8px 0;
+  margin: 20px 0 px 0;
+  flex-direction: column;
   display: flex;
   gap: 18px;
   justify-content: center;
@@ -1107,8 +1108,9 @@ body:not(:has(.panel:target)) .sidebar a[href="#about"]{
 
 /* CONTROL WIDTH & HEIGHT HERE */
 .about-media-joy img{
-  width: 400px;     /* change this */
-  height: 425px;    /* change this */
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   object-fit: cover;  /* keeps images clean */
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.08);
@@ -1202,4 +1204,24 @@ body:has(#about:target) #about { display: block; }
     grid-template-columns: 1fr;
     padding: 10px;
   }
+}
+
+@media (max-width: 600px){
+
+  .about-panel{
+    grid-template-columns: 1fr;
+  }
+
+  .about-panel .panel-media{
+    grid-column: 1;
+  }
+
+}
+
+@media (max-width: 600px){
+
+  .events-panel .events-layout{
+    grid-template-columns: 1fr;
+  }
+
 }
