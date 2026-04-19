@@ -1165,3 +1165,41 @@ body:not(:has(.panel:target)) .sidebar a[href="#about"]{
 .panel:target { display: block; }
 body:has(.panel:target) #about { display: none; }
 body:has(#about:target) #about { display: block; }
+
+@media (max-width: 600px){
+
+  .site-title{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .site-tagline{
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .marquee-logo{
+    width: 160px;
+    height: auto;
+  }
+
+  .marquee-panel{
+    padding: 16px;
+  }
+
+  .pill{
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .sidebar{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .layout{
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}
