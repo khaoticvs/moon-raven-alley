@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moon Raven Alley</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  </head>
+
+<body>
+
+  <!-- =========================
+       HEADER / MARQUEE
+  ========================== -->
+  <div class="section-wrapper section-header">
+    <header class="site-header">
+      <div class="marquee">
+        <div class="marquee-panel">
+          <div class="marquee-content">
+            <img
+              class="marquee-logo"
+              src="assets/images/logo1.JPG"
+              alt="Moon Raven Alley logo"
+            />
+
+            <div class="marquee-text">
+              <h1 class="site-title">MOON RAVEN ALLEY</h1>
+              <p class="site-tagline">65C E Main St, Mount Joy, PA 17552 • (717) 492-1944</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+<section class="section-wrapper section-main">
+  <div class="container">
+    <div class="layout">   
+
+    <!-- LEFT COLUMN (PILLS) -->
+  <nav class="sidebar" aria-label="Site navigation">
+  <a class="pill" href="#about">About</a>
+  <a class="pill" href="#services">Services</a>
+  <a class="pill" href="#events">Events</a>
+  <a class="pill" href="#hours">Hours</a>
+  <a class="pill" href="#links">Links</a>
+
+<!-- Sidebar: Open/Closed widget -->
+<div class="open-status" aria-label="Store open status">
+  <div class="open-status__row">
+    <span class="open-status__dot" id="openDot" aria-hidden="true"></span>
+    <span class="open-status__label" id="openLabel">—</span>
+  </div>
+  <div class="open-status__sub" id="openSub">—</div>  
+</div>
+
+  <!-- Moon Phase (local) -->
+  <div class="moon-widget" aria-label="Current moon phase">
+    <div class="moon-title">Current Moon</div>
+
+    <div class="moon-row">
+      <div class="moon-icon" id="moonIcon" aria-hidden="true"></div>
+
+      <div class="moon-meta">
+        <div class="moon-name" id="moonName">—</div>
+        <div class="moon-date" id="moonDate">—</div>
+
+        <div class="moon-illumination">
+          <span id="moonIllum">—</span>% illuminated
+        </div>
+
+        <div class="moon-next-full">
+          Next Full Moon: <span id="moonNextFull">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jeeps Jams 4 Jugs -->
+  <a class="sidebar-badge" href="#" aria-label="Jeeps Jams 4 Jugs">
+    <span class="sidebar-badge-title">Proud Sponsor Of:</span>
+    <img
+      class="sidebar-badge-img"
+      src="assets/images/jj4j.jpg"
+      alt="Jeeps Jams 4 Jugs 2026 logo"
+      loading="lazy"
+    />
+  </a>
+</nav>
+
+
+    <!-- =========================
+              ABOUT
+      ========================== -->
+<Section class="panel about-panel" id="about">
+  <div class="panel-intro">
+    <h2 class="panel-title"><u>Welcome to Moon Raven Alley!</u></h2>
+  </div>
+
+<!-- Location -->
+  <div class="about-row">
+    <div class="panel-copy">
+      <p>Moon Raven Alley is a local metaphysical shop located at</p> 
+      <p><a href="https://www.google.com/maps?q=65C+E+Main+St,+Mount+Joy,+PA+17552" 
+      target="_blank" rel="noopener">
+      65C E. Main Street
+        </a>in
+        <a href="https://www.google.com/maps?q=Mount+Joy,+PA" target="_blank" rel="noopener">
+        Mount Joy,
+        </a>Pennsylvania. Rooted  in a</p>
+      <p>rich history,  diverse culture, small town atmosphere.</p>
+      <p>Surrounded by charming streets, and neighboring</p> 
+      <p>communities worth exploring, our location places you at</p> 
+      <p>the heart of Lancaster County.</p>  
+      <p>We are located just minutes from:</p>
+        <ul class="about-bullets">
+          <li><a href="https://www.google.com/maps?q=Lancaster,+PA" target="_blank" rel="noopener">Downtown Lancaster City:</a> 20 minutes</li> 
+          <li><a href="https://www.google.com/maps?q=Elizabethtown,+PA" target="_blank" rel="noopener">Elizabethtown,</a> 15 minutes</li>
+          <li><a href="https://www.google.com/maps?q=Hershey,+PA" target="_blank" rel="noopener">Hershey,</a> 30 minutes</li>
+          <li><a href="https://www.google.com/maps?q=Marietta,+PA" target="_blank" rel="noopener">Marietta,</a> 10 minutes</li>
+          <li><a href="https://www.google.com/maps?q=Columbia,+PA" target="_blank" rel="noopener">Columbia,</a> 15 minutes</li>
+          <li>and more...</li>
+        </ul>    
+      </div>
+    </div>
+
+<!-- History -->
+<section class="about-row">
+  <div class="panel-copy">
+    <p>The building itself carries decades of memories. Once part</p>
+    <p>of the Historic Joy Theater complex (c.1938-1965),</p>
+    <p>the storefront, still reflects its early 20th- century</p> 
+    <p>Queen-Anne style architectural influence (c. 1920). Though</p> 
+    <p>its purpose has evolved, the space continues to offer the</p> 
+    <p>same quiet, welcoming atmosphere that once invited</p> 
+    <p>generations through its doors.</p>
+      <ul></ul> 
+  </div>
+
+<div class="about-media about-media-joy">
+  <video width="100%" height="auto" controls>
+    <source src="assets/video/Then&Now.mov" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+</section>
+  
+<section class="about-row">
+  <div class="panel-copy">
+    <p>Situated right on main street, Moon Raven Alley stands</p> 
+    <p>among the buildings that helped shape Mount Joy's</p>
+    <p>Historic district which was once a central hub of</p>
+    <p>community life and connection.</p>
+    <ul></ul>
+  </div>
+</section>
+  
+<section class="about-row">
+  <div class="panel-copy">
+    <p>establishing its home here, the shop has become an active</p> 
+    <p>member of the local community. Hosting its own events,</p> 
+    <p>while also participating in borough celebrations and</p> 
+    <p>seasonal happenings.</p>
+      <ul></ul> 
+  </div>
+</section>
+  
+<section class="about-row">
+  <div class="panel-copy">
+    <p>Owned by Collette Wagman and Gina Alberty, since its</p>
+    <p>opening, Moon Raven Alley exists to provide a thoughtful</p> 
+    <p>and welcoming space. A place where curiosity is encouraged,</p>
+    <p>tradition is honored, and community remains at the heart of</p> 
+    <p>everything we strive to provide.</p>
+      <ul></ul>
+  </div>
+</section>
+
+  
+<!--Community-->
+<section class="about-row">
+  <div class="panel-copy">
+    <p>As a member of the community, Moon Raven Alley has</p> 
+    <p>hosted open to the public, during the full moons.</p> 
+    <p>Been an active part of the Chocolate walk for a number of</p> 
+    <p>years, as well as trick-or-treat night in the borough.</p> 
+    <p>They have also hosted a variety of classes. This including</p> 
+    <p>art classes taught by the owner who loves to paint, and</p> 
+    <p>provides a samll art gallery for everyone to walk through.</p>
+      <ul></ul>
+  </div>
+</section> 
+
+<!-- Offerings -->
+<section class="about-row">
+  <div class="panel-copy">
+    <p>So whether you are seeking the mystical and magical,</p> 
+    <p>or the mysterious and magnificent. Whatever it is you</p>
+    <p>might be looking for, Moon Raven Alley has a variety of</p> 
+    <p>offerings from:</p>
+      <ul class="about-bullets">
+        <li>Handmade goods</li>
+        <li>Local art</li>
+        <li>Spiritual tools</li>
+        <li>Books, herbs, and crystals</li>
+        <li>A selection of incense and candles</li>
+        <li>Tarot decks</li>
+        <li>Readings by appointment only</li>
+        <li>More coming soon...</li>
+      </ul>
+  </div>
+</section>
+
+<!-- Blessings -->
+<div class="about-row">
+  <div class="panel-copy">
+    <p></p>
+    <p>Blessed be. And merry meet.</p>
+    <p>As above, so below.</p>
+    <p>So within, so without.</p> 
+    <p>So mote it be.</p>
+  </div>
+</div>
+</Section>
+
+
+
+<!-- =========================
+       SERVICES
+========================== -->
+
+<section class="panel services-panel" id="services">
+  <div class="panel-intro">
+    <h2 class="panel-title"><u>Now Showing:</u></h2>
+  </div>
+  
+
+  <div class="services-grid">
+      <!-- Column 1 -->
+    <div class="services-media">
+    <img width="800" height="600" src="assets/images/Summer Solstice.PNG" alt="Spiritual tools">
+    </div>  
+
+      <div class="services-card">
+        <h3 class="services-head">18+ (Ask First):</h3>
+          <ul class="services-list">
+            <li>Swords</li>
+            <li>Knives</li>
+            <li>Daggers</li>
+            <li>and other specialized items by request.</li>
+          </ul>
+        <div class="services-media">
+          <video class="services-video" autoplay muted loop playsinline>
+            <source src="assets/video/Ask First 18+.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="services-card">
+        <h3 class="services-head">Supplies:</h3>
+        <ul class="services-list">
+          <li>Herbs</li>
+          <li>Candles of all colors & sizes</li>
+          <li>A variety of inscense related items
+            <p>cones, sticks, burners</p>
+          </li>
+          <li>house-made oils</li>
+          <li>and more...</li>
+        </ul>
+        <div class="services-media">
+          <video class="services-video" autoplay muted loop playsinline>
+            <source src="assets/video/Supplies.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p>(if items are currently out of stock, check back again soon.)</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="services-card">
+        <h3 class="services-head">Tools:</h3>
+        <ul class="services-list">
+          <li>Tarot & Oracle Decks</li>
+          <li>Runes</li>
+          <li>Crystals</li>
+            <p>small, medium, large, shapes, orbs, towers, raw and more</p>
+          <li>pendullums</li>
+        </ul>
+        <div class="services-media">
+          <video class="services-video" autoplay muted loop playsinline>
+            <source src="assets/video/Tools.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="services-card">
+        <h3 class="services-head">Library:</h3>
+        <ul class="services-list">
+          <li>Themed Best-Sellers</li>
+          <li>Books about the Occult</li>
+            <p>and various other spiritualalities</p>
+          <li>Calendars</li>
+          <li>Wheel of the year</li>
+          <li>and always growing</li>
+        </ul>
+        <div class="services-media">
+          <video class="services-video" autoplay muted loop playsinline>
+            <source src="assets/video/Library.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="services-card">
+        <h3 class="services-head">Hand-Crafted:</h3>
+        <ul class="services-list">
+          <li>soaps</li>
+          <li>balms</li>
+          <li>game boards</li>
+          <li>Jewelry</li>
+          <li>oils</li>
+          <li>railroad spike forged items</li>
+          <li>Stained-glass windows, and more...</li>
+        </ul>
+        <div class="services-media">
+          <video class="services-video" autoplay muted loop playsinline>
+            <source src="assets/video/Handcrafted.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p>(some hand-craft items are made on request, in house. Others are through various vendors.)</p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="services-card">
+        <h3 class="services-head">Readings: (Appointment Only)</h3>
+        <ul class="services-list">
+          <li>Natal Charts</li>
+          <li>Tarot Readings</li>
+          <li>Past Life</li>
+          <li>Mediumship</li>
+          <li>Runes</li>
+        </ul>
+      </div>          
+        
+      <div class="services-card">
+        <h3 class="services-head">Classes:</h3>
+        <ul class="services-list">
+          <li>Art Classes, by the owner</li>
+          <li>more coming soon...</li>
+        </ul>
+        <div>
+      </div>
+  </div>
+</section>
+ 
+<!--EVENTS-->
+
+<section class="panel events-panel" id="events">
+  <div class="panel-intro">
+    <h2 class="panel-title">Events:</h2>
+    <p class="panel-lead"></p>
+  </div>
+
+  <div class="events-layout">
+
+    <!-- LEFT COLUMN -->
+  <div class="events-left">
+
+  <!-- Wheel Image -->
+  <img src="assets/images/wheel_of_the_year.png" alt="Wheel of the Year 2026">
+    
+  
+  <!-- Date + Countdown Section -->
+  <div class="season-widget">
+
+    <div class="season-date">
+      Date of: <span id="seasonDate">—</span>
+    </div>
+
+    <div class="season-countdown" id="seasonCountdown">
+      00:00:00:00
+    </div>
+      <p><div class="season-until">
+        until <span id="seasonNameInline">—</span>
+</div>
+
+  </div>
+
+</div>  
+
+    <!-- RIGHT COLUMN -->
+<section class="events-right">
+
+  <!-- TOP: media box (future Google Calendar embed goes here) -->
+  <div class="events-block">
+  <div class="block-title">Calendar</div>
+
+  <iframe src="https://calendar.google.com/calendar/embed?src=fcaa0822c7759567991212b6c00fec220d5469131a2feaac7681ef1cec29d77f%40group.calendar.google.com&ctz=America%2FNew_York"
+    width="100%"
+    height="400"
+    style="border:0;"
+    loading="lazy">
+  </iframe>
+</div>
+    
+  <!-- BOTTOM: upcoming list (keep / replace later) -->
+  <div class="events-block">
+  <div class="block-title">Upcoming Events</div>
+
+  <iframe src="https://calendar.google.com/calendar/embed?src=fcaa0822c7759567991212b6c00fec220d5469131a2feaac7681ef1cec29d77f%40group.calendar.google.com&ctz=America%2FNew_York&mode=AGENDA"
+    width="100%"
+    height="250"
+    style="border:0;"
+    loading="lazy">
+  </iframe>
+</div>
+</section>
+</div>
+</section>
+
+<!-- =========================
+     HOURS
+========================== -->
+<section class="panel hours-panel" id="hours">
+  <div class="panel-intro">
+    <h2 class="panel-title"><u>Store Hours:</u></h2>
+    <p class="panel-lead"></p>
+  </div>
+
+  <div class="hours-grid">
+    <!-- LEFT: Hours -->
+    <div class="hours-card">
+      <div class="hours-card-title">Hours:</div>
+
+      <div class="panel-copy">
+        <p><strong>Sunday - Tuesday:</strong> Closed</p>
+        <p><strong>Wednesday:</strong> 12:30 PM - 6:00 PM</p>
+        <p><strong>Thursday:</strong> 12:30 PM - 7:00 PM</p>
+        <p><strong>Friday:</strong> 12:30 PM - 7:00 PM</p>
+        <p><strong>Saturday:</strong> 11:00 AM - 7:00 PM</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Exceptions -->
+    <div class="hours-card">
+      <div class="hours-card-title">Exceptions:</div>
+
+      <ul class="about-bullets hours-bullets">
+        <li>Hours subject to change.</li>
+        <li>Closed for holidays.</li>
+        <li>Local weather may affect hours.</li>
+        <li>Follow us on social media for updates.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HOURS: bottom fill (OPEN/CLOSED message) -->
+<div class="hours-message" id="hoursMessage" aria-live="polite">
+  <div class="hours-message-text" id="hoursMessageText">—</div>
+</div>
+</section>
+
+<!-- =========================
+     LINKS
+========================== -->
+<section class="panel links-panel" id="links">
+  <div class="panel-intro">
+    <h2 class="panel-title">Links</h2>
+    <p class="panel-lead"></p>
+  </div>
+
+  <div class="links-grid">
+
+    <!-- Social -->
+    <div class="links-card">
+  <div class="links-card-title">Social Media</div>
+
+  <div class="links-social-row">
+    <span class="links-social-text">Follow us on our socials:</span>
+
+    <a href="https://facebook.com/moonravenalley"
+       target="_blank"
+       rel="noopener"
+       aria-label="Facebook"
+       class="social-icon">
+      <!-- Facebook SVG -->
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor"
+          d="M22 12a10 10 0 10-11.5 9.87v-6.99H8.08V12h2.42V9.8c0-2.4 1.43-3.73 3.62-3.73
+          1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.2 0-1.57.75-1.57 1.52V12h2.67l-.43
+          2.88h-2.24v6.99A10 10 0 0022 12z"/>
+      </svg>
+    </a>
+
+    <a href="https://instagram.com/moonravenalley"
+       target="_blank"
+       rel="noopener"
+       aria-label="Instagram"
+       class="social-icon">
+      <!-- Instagram SVG -->
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor"
+          d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24
+          5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3
+          3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0
+          000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.88a1.12 1.12 0
+          100 2.24 1.12 1.12 0 000-2.24z"/>
+      </svg>
+    </a>
+
+    <a href="https://x.com/MoonRavenAlley"
+   target="_blank"
+   rel="noopener"
+   aria-label="X"
+   class="social-icon">
+
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="currentColor"
+      d="M18.9 2H22l-7.3 8.4L23 22h-6.2l-4.8-6.3L6.5 22H2l7.8-8.9L1 2h6.3l4.4 5.8L18.9 2z"/>
+  </svg>
+
+</a>
+  </div>
+
+<div class="links-review-row">
+  <span class="links-review-text">Leave us a Review:</span>
+
+  <a href="https://www.google.com/maps/place/Moon+Raven+Alley/@40.1095268,-76.5028192,17z/data=!3m1!4b1!4m6!3m5!1s0x89c63d01d6658a8f:0x2eb2772c9e662104!8m2!3d40.1095227!4d-76.5002443!16s%2Fg%2F11fhn6tf1z?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+     target="_blank"
+     rel="noopener"
+     aria-label="Google Reviews"
+     class="social-icon google-icon">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor"
+        d="M21.35 11.1H12v2.9h5.35c-.23 1.3-1.5 3.8-5.35 3.8
+        -3.22 0-5.85-2.66-5.85-5.95s2.63-5.95
+        5.85-5.95c1.84 0 3.07.78 3.78 1.46l2.58-2.5C16.9
+        3.35 14.7 2.5 12 2.5 6.76 2.5 2.5 6.76 2.5
+        12s4.26 9.5 9.5 9.5c5.48 0 9.1-3.85
+        9.1-9.27 0-.62-.07-1.1-.15-1.63z"/>
+    </svg>
+
+  </a>
+</div>
+</div>
+
+    <!-- Events -->
+    <div class="links-card">
+  <div class="links-card-title">Calendar</div>
+
+  <ul class="links-list">
+    <li>
+      <a href="https://calendar.google.com/calendar/ical/fcaa0822c7759567991212b6c00fec220d5469131a2feaac7681ef1cec29d77f%40group.calendar.google.com/public/basic.ics"
+         target="_blank"
+         rel="noopener">
+        Add Our Events to Your Calendar
+      </a>
+    </li>
+    <li>
+  <a href="https://calendar.google.com/calendar/u/0?cid=fcaa0822c7759567991212b6c00fec220d5469131a2feaac7681ef1cec29d77f%40group.calendar.google.com"
+     target="_blank"
+     rel="noopener">
+    View in Google Calendar
+  </a>
+</li>
+  </ul>
+</div>
+
+
+    <!-- Shop / Vendors -->
+    <div class="links-card">
+      <div class="links-card-title">Shop & Vendors</div>
+      <ul class="links-list">
+        <li><a href="https://drunkensmithy.com/" target="_blank" rel="noopener">Drunken Smithy</a></li>
+        <li><a href="https://www.facebook.com/FracturedFrog/" target="_blank" rel="noopener">Fractured Frog</a></li>
+        <li><a href="https://www.facebook.com/mysticmoonelementals" target="_blank" rel="noopener">Mystic Moon</a></li>
+      </ul>
+    </div>
+
+    <!-- Community -->
+    <div class="links-card">
+      <div class="links-card-title">Community</div>
+      <ul class="links-list">
+        <li><a href="https://mountjoychamber.com/" target="_blank" rel="noopener">Chamber of Commerce</a></li>
+      </ul>
+      <ul class="links-list">
+        <li><a href="https://www.mountjoyhistory.com/" target="_blank" rel="noopener">Mount Joy Historical Society</a></li>
+      </ul>
+    </div>
+
+    <!-- Credits -->
+<div class="links-card links-credits">
+  <div class="links-card-title">Credits & Sources</div>
+  <ul class="links-list">
+      <li>All images and videos on this site are either original photos taken for the owner, or sourced from the Mount 
+        Joy Historical Society.</li>
+      <li>Wheel of the Year image created using ChapGPT.</li>
+      <li>All content on this site is the property of Moon Raven Alley LLC and may not be used without permission.</li>
+      <li>Website designed and developed by Khaoticus Solutions</li>
+  </ul>
+</div>
+
+  </div>
+</section>
+      </section>
+    </main>
+    <!-- =========================
+     FOOTER
+     ========================== -->
+    <div class="section-wrapper section-footer">
+      <footer class="site-footer">
+        <p>© 2026 Moon Raven Alley LLC</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
