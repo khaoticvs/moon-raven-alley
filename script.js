@@ -252,7 +252,7 @@
   // For THIS mask approach we subtract the "shadow circle" from a full lit disc.
   // These cx values make crescent/gibbous sizes correct and curve the right way.
   const shadowR = r * 0.90;
-  const shadowCx = waxing ? (r + x) : (r - x);
+  const shadowCx = waxing ? (r - x) : (r + x);
 
   icon.innerHTML = `
   <svg viewBox="0 0 ${moonSize} ${moonSize}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
