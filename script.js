@@ -227,20 +227,16 @@
   });
 
   // phase naming by moon age
-  let phaseName = "";
+ let phaseName = "";
 
-  if (phaseDays < 1.84566) phaseName = "New Moon";
-  else if (phaseDays < 5.53699) phaseName = "Waxing Crescent";
-  else if (phaseDays < 9.22831) phaseName = "First Quarter";
-  else if (phaseDays < 12.91963) phaseName = "Waxing Gibbous";
-  else if (phaseDays < 16.61096) phaseName = "Full Moon";
-  else if (phaseDays < 20.30228) phaseName = "Waning Gibbous";
-  else if (phaseDays < 23.99361) phaseName = "Last Quarter";
-  else if (phaseDays < 27.68493) phaseName = "Waning Crescent";
-  else phaseName = "New Moon";
-
-  const waxing = phaseFrac < 0.5;
-
+if (phaseDays < 1 || phaseDays >= 28.5) phaseName = "New Moon";
+else if (phaseDays < 7.4) phaseName = "Waxing Crescent";
+else if (phaseDays < 8.9) phaseName = "First Quarter";
+else if (phaseDays < 13.8) phaseName = "Waxing Gibbous";
+else if (phaseDays < 15.8) phaseName = "Full Moon";
+else if (phaseDays < 20.7) phaseName = "Waning Gibbous";
+else if (phaseDays < 22.2) phaseName = "Last Quarter";
+else phaseName = "Waning Crescent";
   // --- Clean SVG moon render ---
   const moonSize = 64;
   const r = moonSize / 2;
