@@ -67,7 +67,7 @@ body{
   max-width: 1600px;
 
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   padding: 12px;
   border-radius: 20px;
   background: var(--panel-dark);
