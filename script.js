@@ -195,7 +195,7 @@
   if (!icon || !nameEl || !dateEl || !illumEl || !nextFullEl) return;
 
   function toJulian(date) {
-    return (date.getTime() / 86400000) + 2440587.5;
+    return date.getTime() / 86400000 + 2440587.5;
   }
 
   const now = new Date();
@@ -208,14 +208,15 @@
   const phaseDays = ((daysSince % synodicMonth) + synodicMonth) % synodicMonth;
   const phaseFrac = phaseDays / synodicMonth; // 0..1
 
-  // illumination 0..1
+  // illumination percentage
   const illum = 0.5 * (1 - Math.cos(2 * Math.PI * phaseFrac));
   illumEl.textContent = Math.round(illum * 100);
 
-  // next full moon (phaseFrac = 0.5)
+  // next full moon
   const fullMoonAge = 14.765;
-let daysUntilFull = fullMoonAge - phaseDays;
-if (daysUntilFull < 0) daysUntilFull += synodicMonth;
+  let daysUntilFull = fullMoonAge - phaseDays;
+  if (daysUntilFull < 0) daysUntilFull += synodicMonth;
+
   const nextFullDate = new Date(now.getTime() + daysUntilFull * 86400000);
 
   nextFullEl.textContent = nextFullDate.toLocaleDateString(undefined, {
@@ -225,63 +226,75 @@ if (daysUntilFull < 0) daysUntilFull += synodicMonth;
     year: "numeric",
   });
 
-  const waxing = phaseFrac < 0.5;
-
+  // phase naming by moon age
   let phaseName = "";
 
-if (phaseDays < 1.84566) phaseName = "New Moon";
-else if (phaseDays < 5.53699) phaseName = "Waxing Crescent";
-else if (phaseDays < 9.22831) phaseName = "First Quarter";
-else if (phaseDays < 12.91963) phaseName = "Waxing Gibbous";
-else if (phaseDays < 16.61096) phaseName = "Full Moon";
-else if (phaseDays < 20.30228) phaseName = "Waning Gibbous";
-else if (phaseDays < 23.99361) phaseName = "Last Quarter";
-else if (phaseDays < 27.68493) phaseName = "Waning Crescent";
-else phaseName = "New Moon";
+  if (phaseDays < 1.84566) phaseName = "New Moon";
+  else if (phaseDays < 5.53699) phaseName = "Waxing Crescent";
+  else if (phaseDays < 9.22831) phaseName = "First Quarter";
+  else if (phaseDays < 12.91963) phaseName = "Waxing Gibbous";
+  else if (phaseDays < 16.61096) phaseName = "Full Moon";
+  else if (phaseDays < 20.30228) phaseName = "Waning Gibbous";
+  else if (phaseDays < 23.99361) phaseName = "Last Quarter";
+  else if (phaseDays < 27.68493) phaseName = "Waning Crescent";
+  else phaseName = "New Moon";
 
-// --- Render moon using SVG (correct size + correct waning curve) ---
+  const waxing = phaseFrac < 0.5;
+
+  // --- Clean SVG moon render ---
   const moonSize = 64;
   const r = moonSize / 2;
+  const cx = r;
+  const cy = r;
 
-  // phase angle: 0=new, π/2=1st quarter, π=full, 3π/2=last quarter
-  const a = 2 * Math.PI * phaseFrac;
+  // cosine-based terminator width
+  const k = Math.cos(2 * Math.PI * phaseFrac);
+  const rx = Math.abs(k) * (r - 1);
 
-  // cos(a): +1(new) -> 0(quarters) -> -1(full)
-  const x = Math.cos(a) * r;
+  let litSide;
+  if (phaseFrac === 0 || phaseFrac === 1) litSide = "none";
+  else if (phaseFrac < 0.5) litSide = "right";
+  else litSide = "left";
 
-  // Waxing = light on RIGHT. Waning = light on LEFT.
-  // For THIS mask approach we subtract the "shadow circle" from a full lit disc.
-  // These cx values make crescent/gibbous sizes correct and curve the right way.
-  const shadowR = r * 0.90;
-  const shadowCx = waxing ? (r - x) : (r + x);
+  let svg = `
+    <svg viewBox="0 0 ${moonSize} ${moonSize}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="lit" cx="35%" cy="30%" r="75%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.95)"/>
+          <stop offset="55%" stop-color="rgba(215,215,215,0.98)"/>
+          <stop offset="100%" stop-color="rgba(160,160,160,0.95)"/>
+        </radialGradient>
+        <clipPath id="moonClip">
+          <circle cx="${cx}" cy="${cy}" r="${r - 1}" />
+        </clipPath>
+      </defs>
 
-  icon.innerHTML = `
-  <svg viewBox="0 0 ${moonSize} ${moonSize}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <radialGradient id="lit" cx="35%" cy="30%" r="75%">
-        <stop offset="0%" stop-color="rgba(255,255,255,0.95)"/>
-        <stop offset="55%" stop-color="rgba(215,215,215,0.98)"/>
-        <stop offset="100%" stop-color="rgba(160,160,160,0.95)"/>
-      </radialGradient>
-
-      <mask id="moonMask">
-        <rect width="100%" height="100%" fill="white"/>
-        <circle cx="${shadowCx}" cy="${r}" r="${r}" fill="black"/>
-      </mask>
-    </defs>
-
-    <!-- dark base -->
-    <circle cx="${r}" cy="${r}" r="${r-1}" fill="rgba(10,12,16,1)"/>
-
-    <!-- lit disc masked to phase -->
-    <circle cx="${r}" cy="${r}" r="${r-1}" fill="url(#lit)" mask="url(#moonMask)"/>
-
-    <circle cx="${shadowCx}" cy="${r}" r="${shadowR}" fill="black"/>
-
-    <!-- rim -->
-    <circle cx="${r}" cy="${r}" r="${r-1}" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-  </svg>
+      <!-- dark base -->
+      <circle cx="${cx}" cy="${cy}" r="${r - 1}" fill="rgba(10,12,16,1)"/>
   `;
+
+  if (litSide === "right") {
+    svg += `
+      <g clip-path="url(#moonClip)">
+        <rect x="${cx}" y="0" width="${r}" height="${moonSize}" fill="url(#lit)"/>
+        <ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${r - 1}" fill="url(#lit)"/>
+      </g>
+    `;
+  } else if (litSide === "left") {
+    svg += `
+      <g clip-path="url(#moonClip)">
+        <rect x="0" y="0" width="${r}" height="${moonSize}" fill="url(#lit)"/>
+        <ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${r - 1}" fill="url(#lit)"/>
+      </g>
+    `;
+  }
+
+  svg += `
+      <circle cx="${cx}" cy="${cy}" r="${r - 1}" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+    </svg>
+  `;
+
+  icon.innerHTML = svg;
 
   nameEl.textContent = phaseName;
   dateEl.textContent = now.toLocaleDateString(undefined, {
@@ -291,7 +304,6 @@ else phaseName = "New Moon";
     year: "numeric",
   });
 })();
-
 /* =========================
    HOURS: open/closed message (DO NOT CHANGE TIMES)
 ========================= */
