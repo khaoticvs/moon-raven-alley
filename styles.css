@@ -399,7 +399,7 @@ body:not(:has(.panel:target)) .sidebar a[href="#about"]{
 .about-panel a:hover{ text-decoration: underline; }
 
 .about-panel .panel-media{
-  align-items: center;
+  align-items: end;
   padding: -48px;
   max-width: 180px;
   min-height: 180px;
