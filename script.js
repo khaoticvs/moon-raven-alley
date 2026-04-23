@@ -213,7 +213,9 @@
   illumEl.textContent = Math.round(illum * 100);
 
   // next full moon (phaseFrac = 0.5)
-  const daysUntilFull = ((0.5 - phaseFrac + 1) % 1) * synodicMonth;
+  const fullMoonAge = 14.765;
+let daysUntilFull = fullMoonAge - phaseDays;
+if (daysUntilFull < 0) daysUntilFull += synodicMonth;
   const nextFullDate = new Date(now.getTime() + daysUntilFull * 86400000);
 
   nextFullEl.textContent = nextFullDate.toLocaleDateString(undefined, {
@@ -225,18 +227,17 @@
 
   const waxing = phaseFrac < 0.5;
 
-  const phases = [
-    "New Moon",
-    "Waxing Crescent",
-    "First Quarter",
-    "Waxing Gibbous",
-    "Full Moon",
-    "Waning Gibbous",
-    "Last Quarter",
-    "Waning Crescent",
-  ];
-  const idx = Math.floor((phaseFrac * 8) + 0.5) % 8;
-  const phaseName = phases[idx];
+  let phaseName = "";
+
+if (phaseDays < 1.84566) phaseName = "New Moon";
+else if (phaseDays < 5.53699) phaseName = "Waxing Crescent";
+else if (phaseDays < 9.22831) phaseName = "First Quarter";
+else if (phaseDays < 12.91963) phaseName = "Waxing Gibbous";
+else if (phaseDays < 16.61096) phaseName = "Full Moon";
+else if (phaseDays < 20.30228) phaseName = "Waning Gibbous";
+else if (phaseDays < 23.99361) phaseName = "Last Quarter";
+else if (phaseDays < 27.68493) phaseName = "Waning Crescent";
+else phaseName = "New Moon";
 
 // --- Render moon using SVG (correct size + correct waning curve) ---
   const moonSize = 64;
